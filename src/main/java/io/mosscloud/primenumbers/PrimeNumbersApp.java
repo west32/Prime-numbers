@@ -8,24 +8,28 @@ public class PrimeNumbersApp {
         int minNumberOfRange;
         int maxNumberOfRange;
 
+
+
+//        ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println("Podaj pierwszą liczbe z przedziału liczb większą od 1 ");
-            Scanner scanner = new Scanner(System.in);
-            minNumberOfRange = scanner.nextInt();
-            if (minNumberOfRange <= 1) {
-                System.out.println("WIĘKSZĄ od 1");
-                minNumberOfRange = scanner.nextInt();
+            System.out.println("Podaj pierwszą liczbę z przedziału");
+            String minNumberOfRangeAsString = scanner.next();
+            try {
+                minNumberOfRange = Integer.parseInt(minNumberOfRangeAsString);
+                if (minNumberOfRange <= 1) {
+                    minNumberOfRange = 2;
+                    System.out.println("Liczby pierwszę są liczbami dodatnimi, a ich przedział zaczyna sie od 2 ;)");
+                    break;
+                }
+            }catch(NumberFormatException numberFormatException){
+                System.out.println("podaj liczbe calkowitą");
             }
-            System.out.println("Podaj ostatnią liczbę z przedziału liczb");
-            maxNumberOfRange = scanner.nextInt();
+        }
 
-            if (minNumberOfRange <= 1 || maxNumberOfRange <= 1){
-                System.out.println("Wrong range of numbers, try again");
+        System.out.println("Podaj ostatnią liczbę z przedziału");
+        maxNumberOfRange = scanner.nextInt();
 
-
-            }else break;
-
-            }
 
         for (int i = minNumberOfRange; i <= maxNumberOfRange; i++) {
             boolean iIsPrimeNumber = true;
@@ -36,22 +40,16 @@ public class PrimeNumbersApp {
                     iIsPrimeNumber = false;
                     break;
                 }
-
-
             }
             if (iIsPrimeNumber) {
                 System.out.println(i);
             }
         }
-
-
-        }
     }
+}
 
 //TODO
-//Usecase
-//1. System prosi o podanie przedziału liczb z jakich ma podać liczby pierwsze
-//2. Użytkownik podaje liczby pierwsze
-//3. System wypisuje liczby pierwsze
-//2a uzytkownik podał ujemny przedział (jak to obsluzyc) next punkt 3a
-//3a System informuje o ujemnym przedziale i prosi o podanie poprawnego (wracamy do kroku 1)
+//
+//
+//
+//* obsluzyc przedzial malejacy
