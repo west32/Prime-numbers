@@ -4,35 +4,25 @@ public class CountPrimeNumbers {
 
 
     public void printPrimeNumbers(int minNumberOfRange, int maxNumberOfRange) {
-        if (minNumberOfRange < maxNumberOfRange) {
-            for (int i = minNumberOfRange; i <= maxNumberOfRange; i++) {
-                boolean iIsPrimeNumber = true;
-                int minDividingsNumber = 2;
-                int maxDividingsNumber = i - 1;
-                for (int j = minDividingsNumber; j <= maxDividingsNumber; j++) {
-                    if (i % j == 0) {
-                        iIsPrimeNumber = false;
-                        break;
-                    }
-                }
-                if (iIsPrimeNumber) {
-                    System.out.println(i);
-                }
-            }
-        }else {for (int i = minNumberOfRange; i >= maxNumberOfRange; i--){
-            boolean iIsPrimeNumber = true;
-            int minDividingsNumber = 2;
-            int maxDividingsNumber = i - 1;
-            for (int j = minDividingsNumber; j <= maxDividingsNumber; j++) {
+
+        int beginingOfRange = Math.max(Math.min(minNumberOfRange, maxNumberOfRange), 2);
+        int endOfRange = Math.max(minNumberOfRange, maxNumberOfRange);
+
+        for (int i = beginingOfRange; i <= endOfRange; i++) {
+            boolean isPrimeNumber = true;
+            int minDividingNumber = 2;
+            int maxDividingNumber = i - 1;
+            for (int j = minDividingNumber; j <= maxDividingNumber; j++) {
                 if (i % j == 0) {
-                    iIsPrimeNumber = false;
+                    isPrimeNumber = false;
                     break;
                 }
             }
-            if (iIsPrimeNumber) {
+            if (isPrimeNumber) {
                 System.out.println(i);
+
             }
-        }}
+        }
+
     }
 }
-
