@@ -21,9 +21,6 @@ public class GetRangeOfPrimeNumbers {
         }
         return minNumberOfRange;
     }
-
-
-
     public Integer getMaxNumberOfRange(){
         Integer maxNumberOfRange = null;
         while(maxNumberOfRange == null){
