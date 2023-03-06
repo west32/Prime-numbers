@@ -16,9 +16,9 @@ public class CountFibonacci {
         };
     }
     public void countFibonacci(int howManyNumbers) {
-        List<Integer> fibonacciNumbers = new ArrayList<>();
-        int firstNumber = 0;
-        int secondNumber = 1;
+        List<Long> fibonacciNumbers = new ArrayList<>();
+        long firstNumber = 0;
+        long secondNumber = 1;
         if (howManyNumbers == 0) {
             fibonacciConsumerStrategy.consumerFibonacci(fibonacciNumbers);
             return;
@@ -29,7 +29,7 @@ public class CountFibonacci {
         }
         if (howManyNumbers > 2) {
             for (int i = 2; i < howManyNumbers; i++) {
-                int thirdNumber = firstNumber + secondNumber;
+                long thirdNumber = firstNumber + secondNumber;
                 fibonacciNumbers.add(thirdNumber);
                 firstNumber = secondNumber;
                 secondNumber = thirdNumber;

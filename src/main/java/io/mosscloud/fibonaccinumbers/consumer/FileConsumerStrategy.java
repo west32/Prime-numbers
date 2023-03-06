@@ -6,11 +6,11 @@ import java.io.IOException;
 import java.util.Collection;
 public class FileConsumerStrategy implements FibonacciConsumerStrategy {
     @Override
-    public void consumerFibonacci(Collection<Integer> fibonacciCountResult) {
+    public void consumerFibonacci(Collection<Long> fibonacciCountResult) {
         BufferedWriter writer;
         try {
             writer = new BufferedWriter(new FileWriter("bartek.txt"));
-            for (int number : fibonacciCountResult) {
+            for (long number : fibonacciCountResult) {
                 String numberAsString = number + " | ";
                 writer.write(numberAsString );
             }
