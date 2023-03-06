@@ -6,6 +6,7 @@ import io.mosscloud.fibonaccinumbers.FibonacciScanner;
 import io.mosscloud.primenumbers.CountPrimeNumbers;
 import io.mosscloud.primenumbers.GetRangeOfPrimeNumbers;
 
+import java.util.Locale;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -13,7 +14,7 @@ public class MossCloudApp {
     public static void main(String[] arg) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Type 'prime' to count prime numbers or 'fibonacci' to count fibonacci numbers ");
-        String option = scanner.nextLine();
+        String option = scanner.nextLine().toLowerCase(Locale.ROOT).trim();
         if (Objects.equals(option, "prime")) {
             GetRangeOfPrimeNumbers getRangeOfPrimeNumbers = new GetRangeOfPrimeNumbers();
             int minNumberOfRange = getRangeOfPrimeNumbers.getMinNumberOfRange();
