@@ -9,11 +9,9 @@ public class GetRangeOfPrimeNumbers {
             System.out.println("Podaj pierwszą liczbę z przedziału");
             try {
                 minNumberOfRange = Integer.parseInt(scanner.next());
-
                 if (minNumberOfRange <= 1) {
                     minNumberOfRange = 2;
                     System.out.println("Liczby pierwszę są liczbami dodatnimi, a ich przedział zaczyna sie od 2 ;)");
-
                 } return minNumberOfRange;
             } catch (NumberFormatException numberFormatException) {
                 System.out.println("podaj liczbe calkowitą");
@@ -28,11 +26,10 @@ public class GetRangeOfPrimeNumbers {
             try{
                 maxNumberOfRange = Integer.parseInt(scanner.next());
             } catch (NumberFormatException numberFormatException) {
-            System.out.println("podaj liczbe calkowitą");
+                System.out.println("podaj liczbe calkowitą");
             }
         }
         return maxNumberOfRange;
     }
-
 }
 
