@@ -15,7 +15,7 @@ public class MossCloudApp {
         Scanner scanner = new Scanner(System.in);
         while(true){
             System.out.println("Type 'prime' to count prime numbers or 'fibonacci' to count fibonacci numbers ");
-            String option = scanner.nextLine().toLowerCase(Locale.ROOT).trim();
+            String option = scanner.nextLine().toLowerCase().trim();
             if (Objects.equals(option, "prime")) {
                 GetRangeOfPrimeNumbers getRangeOfPrimeNumbers = new GetRangeOfPrimeNumbers();
                 int minNumberOfRange = getRangeOfPrimeNumbers.getMinNumberOfRange();
@@ -42,12 +42,3 @@ public class MossCloudApp {
 }
 
 
-//TODO
-//1. przeczytac o API
-//2.MVC przeczytac model view controler (nastepna lekcja) PODSTAWY
-//3. refactor, wyczyscic fibonacci kod
-//4. wykluczyc i obsluzyc niepoprawny wybor fibonacci/prime (duze male litery i spacje na koncu i poczatku)
-//5.PR i przesylam
-//6. wejsciowka z GITA
-//7. retrospekcja bledu z commitami squashem z dzisiejszych commitow i pr
-// ZACZAĆ REALIZOWAC OD KONCA
